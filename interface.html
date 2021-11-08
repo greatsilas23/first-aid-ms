@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+    <html>
+
+        <head>
+            <title>Welcome Page</title>
+            <link rel="stylesheet" href="interface.css">
+        </head>
+
+        <body>
+            <div class="welcome"> 
+                <h2>Welcome to EasySolutions</h2>
+                <h3><p>Your able Financial Manager</p></h3>
+            </div>
+
+            <div class="navbar">
+                <a href="login-page.html">Back to Login page</a>
+                <a href="#createAccount">Create Account</a>
+                <a href="#loans">Loan Services</a>
+                <a href="#otherservices">Other Services</a>
+            </div>
+
+            <p></p>
+
+            <div class="row">
+
+                <div class="leftcolumn">
+
+                    <div class="createForm" id="createAccount">
+                        <p>Account Creation:</p>
+                        <form target="_self" method="post">
+                            <label for="Name">Name:</label>
+                            <input type="text" id="Name" name="Name"><br>
+                            <hr>
+                            <label for="IdNumber">Id Number:</label>
+                            <input type="text" id="IdNumber" name="IdNumber"><br>
+                            <hr>
+                            <input type="submit">
+                        </form>
+                    </div>
+                    <p></p>
+
+                    <div class="createForm" id="createAccount">
+                        <p>Deposit to account:</p>
+                        <form target="_self" method="post">
+                            <label for="IdNumber">Id Number:</label>
+                            <input type="text" id="IdNumber" name="IdNumber"><br>
+                            <hr>
+                            <label for="depositAmount">Deposit Amount</label>
+                            <input type="number" name="depositAmount" id="depositAmount"><br>
+                            <hr>
+                            <input type="button" value="Deposit" onclick="">
+                        </form>
+                    </div>
+                    <p></p>
+
+                    <div class="createForm" id="createAccount">
+                        <p>Withdraw from account:</p>
+                        <form target="_self" method="post">
+                            <label for="IdNumber">Id Number:</label>
+                            <input type="text" id="IdNumber" name="IdNumber"><br>
+                            <hr>
+                            <label for="depositAmount">Withdraw Amount</label>
+                            <input type="number" name="depositAmount" id="depositAmount"><br>
+                            <hr>
+                            <input type="button" value="Withdraw" onclick="">
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="rightcolumn" id="otherservices">
+                    <p style="color: rgb(255, 255, 255);">Query the Database:</p>
+
+                    <div class="createForm" ">
+                        <p>User details</p>
+                        <form target="_self" method="post">
+                            <input type="button" value="Display user details" onclick="">
+                        </form>
+                    </div>
+                    <p></p>
+
+                    <div class="createForm" id="loans" style="margin-bottom: 5mm;">
+                        <p>Loan Services</p>
+                        <form target="_blank" method="post">
+                            <hr>
+                            <label for="IdNumber">Enter Acc/Number:</label>
+                            <input type="text" name="IdNumber" id="IdNumber">
+                            <hr>
+                            <p></p>
+                            <label for="checkEligibility">Check loan eligibility:</label>
+                            <input type="button" value="Check Eligibility" onclick="" >
+                            <hr>
+                            <label for="checkLimit">Check loan limit: </label>
+                            <input type="button" value="Check loan limit" onclick="">
+                            <hr>
+                            <label for="loanAmount">Loan Amount:</label>
+                            <input type="number" name="loanAmount" id="loanAmount">
+                            <hr>
+                            <label for="takeLoan">Take loan: </label>
+                            <input type="button" value="Yes" onclick="">
+                            <input type="reset" value="No" onclick="">
+                            <hr>
+                            <label for="checkLoanbalance">Check loan balance: </label>
+                            <input type="button" value="Check loan balance" onclick="">
+                            <hr>
+                            <label for="repayAmount">Repay Amount:</label>
+                            <input type="number" name="repayAmount" id="repayAmount">
+                            <hr>
+                            <label for="payLoan">Pay loan: </label>
+                            <input type="button" value="Yes" onclick="">
+                            <hr>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </body>
+        
+    </html>
