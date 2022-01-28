@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Landing from './Landing.js'
+import Layout from './Layout.js'
 
 class App extends Component {
   constructor(props){
@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Landing />
+        <Layout />
       </div>
     );
   }

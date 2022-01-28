@@ -1,4 +1,4 @@
-import Background from '../../../images/view.jpg'
+import Background from '../images/view.jpg'
 
 const Layout = {
     landing: {
