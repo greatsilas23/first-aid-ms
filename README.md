@@ -1,1 +1,0 @@
-# Frontend for financial management systems
