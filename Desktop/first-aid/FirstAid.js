@@ -4,6 +4,7 @@ import Rating from './Rating.js'
 import Submit from './Submit.js'
 import Icon from './Icon.js'
 
+
 Class FirstAid extends React.Component {
     constructor(props){
         super(props)

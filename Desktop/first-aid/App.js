@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
-
+import ICON_A from './[removal.ai]_tmp-6246f80563949.png'
+import ICON_B from './154957.svg'
+import ICON_C from './striking-splinter.svg'
+import ICON_D from './Blood_drop_plain.svg.png'
+import ICON_E from './sprained-ankle.svg'
+import ICON_F from './Sprain.png'
+import ICON_G from './154957.svg'
 
 export default class App extends Component {
   constructor(props){
@@ -48,16 +54,36 @@ export default class App extends Component {
         }
     }
   }
+
   handleLogin = () => {
-    this.setState({ showLogin: false})
-    this.setState({ showMenu: true})
+    if(showLogin){
+        this.setState({ showMenu: true})
+        this.setState({ showLogin: false})
+    }else{
+        this.setState({ showRoot: true})
+        this.setState({ showMenu: false})
+        this.setState({ showLogin: true})
+      }
   }
   handleLogout = () => {
-    this.setState({ showMenu: false})
-    this.setState({ showLogin: true})
   }
+  handleRootShow = () => {
+    if(!showRoot){
+        this.setState({ showMenu: false})
+        this.setState({ showLogin: false})
+        this.setState({ showRoot: true})
+    }else{
+        this.setState({ showMenu: true})
+        this.setState({ showLogin: true})
+        this.setState({ showRoot: false})
+      }
+    }
+  }
+  handleRootHide = () => {
+    }
   handleCutsShow = () =>{
     this.setState({showCuts: true})
+    this.state.setState({showMenu: false})
   }
   handleCutsHide = () => {
     this.setState({ showCuts: false})
@@ -151,7 +177,7 @@ export default class App extends Component {
                     <Button
                         title="CUTS"
                         onPress={this.handleCutsShow}
-                        style={styles.menuButton}
+                        style={styles.menuButton.cuts}
                         color="#45ada8"
                     >
                     </Button>
@@ -173,13 +199,14 @@ export default class App extends Component {
                         </View>
                     }
                 </View>
+
                 <View
                     style={styles.item}
                 >
                     <Button
                         title="BURNS"
                         onPress={this.handleBurnsShow}
-                        style={styles.menuButton}
+                        style={styles.menuButton.burns}
                         color="#45ada8"
                     >
                     </Button>
@@ -207,7 +234,7 @@ export default class App extends Component {
                     <Button
                         title="BRUISES"
                         onPress={this.handleBruisesShow}
-                        style={styles.menuButton}
+                        style={styles.menuButton.bruises}
                         color="#45ada8"
                     >
                     </Button>
@@ -235,7 +262,7 @@ export default class App extends Component {
                     <Button
                         title="Sting"
                         onPress={this.handleStingsShow}
-                        style={styles.menuButton}
+                        style={styles.menuButton.sting}
                         color="#45ada8"
                     >
                     </Button>
@@ -263,7 +290,7 @@ export default class App extends Component {
                     <Button
                         title="Splinter"
                         onPress={this.handleSplintersShow}
-                        style={styles.menuButton}
+                        style={styles.menuButton.splinter}
                         color="#45ada8"
                     >
                     </Button>
@@ -291,7 +318,7 @@ export default class App extends Component {
                     <Button
                         title="Sunburns"
                         onPress={this.handleSunburnsShow}
-                        style={styles.menuButton}
+                        style={styles.menuButton.sunburns}
                         color="#45ada8"
                     >
                     </Button>
@@ -319,7 +346,7 @@ export default class App extends Component {
                     <Button
                         title="Nosebleeds"
                         onPress={this.handleNosebleedsShow}
-                        style={styles.menuButton}
+                        style={styles.menuButton.nosebleeds}
                         color="#45ada8"
                     >
                     </Button>
@@ -347,7 +374,7 @@ export default class App extends Component {
                     <Button
                         title="Sprains"
                         onPress={this.handleSprainsShow}
-                        style={styles.menuButton}
+                        style={styles.menuButton.sprains}
                         color="#45ada8"
                     >
                     </Button>
@@ -375,7 +402,7 @@ export default class App extends Component {
                     <Button
                         title="Fractures"
                         onPress={this.handleFracturesShow}
-                        style={styles.menuButton}
+                        style={styles.menuButton.fractures}
                         color="#45ada8"
                     >
                     </Button>
@@ -403,6 +430,18 @@ export default class App extends Component {
                     color="#45ada8"
                 >
                 </Button>
+            </View>
+          }
+          {showRoot &&
+            <View
+                style={styles.dashboard}
+            >
+                <Text>
+                    TOTAL ITEMS: {this.state.totalItems}
+                    TOTAL PATIENTS: {this.state.totalPatients}
+                    TOTAL STAFF: {this.state.totalStaff}
+                    TOTAL PROCEDURES: {this.state.totalProcedures}
+                </Text>
             </View>
           }
         </View>
@@ -433,6 +472,54 @@ const styles = StyleSheet.create({
         scrollbarWidth: 'none'
     },
     menuButton: {
+
+        cuts: {
+            width: '40vw',
+            height: '20vh',
+            borderRadius: '10vw',
+        },
+        burns: {
+            width: '40vw',
+            height: '20vh',
+            borderRadius: '10vw',
+            backgroundImage: ICON_A
+        },
+        bruises: {
+            width: '40vw',
+            height: '20vh',
+            borderRadius: '10vw'
+        },
+        sting: {
+            width: '40vw',
+            height: '20vh',
+            borderRadius: '10vw',
+            backgroundImage: ICON_B
+        }
+        splinter: {
+            width: '40vw',
+            height: '20vh',
+            borderRadius: '10vw'
+        },
+
+        sunburns: {
+            width: '40vw',
+
+            height: '20vh',
+            borderRadius: '10vw'
+        }
+        nosebleeds: {
+            width: '40vw',
+
+            height: '20vh',
+            borderRadius: '10vw'
+
+    },
+    sprains: {
+        width: '40vw',
+        height: '20vh',
+        borderRadius: '10vw'
+    },
+    fractures: {
         width: '40vw',
         height: '20vh',
         borderRadius: '10vw'
