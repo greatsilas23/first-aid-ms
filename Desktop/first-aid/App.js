@@ -14,15 +14,25 @@ export default class App extends Component {
     this.state = {
         showLogin: true,
         showMenu: false,
-        showBurns: false,
-        showBruises: false,
-        showCuts: false,
-        showStings: false,
-        showSplinters: false,
-        showSunburns: false,
-        showNosebleeds: false,
-        showSprains: false,
-        showFractures: false,
+        showBurnsIcon: true,
+        showBurnsProcedure: false,
+        showBruisesIcon: true,
+        showBruisesProcedure: false,
+        showCutsIcon: true,
+        showCutsProcedure: false,
+        showStingsIcon: true,
+        showStingsProcedure: false,
+        showSplintersIcon: true,
+        showSplintersProcedure: false,
+        showSunburnsIcon: true,
+        showSunburnsProcedure: false,
+        showNosebleedsIcon: true,
+        showNosebleedsProcedure: false,
+        showSprainsIcon: true,
+        showSprainsProcedure: false,
+        showFracturesIcon: true,
+        showFracturesProcedure: false,
+        showRoot: false,
         tools: {
             plasters: 'plasters',
             gauzeDressings: 'gauze-dressings',
@@ -33,60 +43,55 @@ export default class App extends Component {
             tweezers: 'tweezers'
         },
         injuries: {
-            cuts: 'A skin wound with separation of the connective tissue elements',
-            burns: 'Tissue damage from hot liquids, the sun, flames, chemicals, electricity or steam',
-            stings: 'Bites from insects',
-            splinters: 'Objects that become embedded under the skin',
-            sunburns: 'Red, painful skin that feels hot to touch',
-            nosebleeds: 'Oozing out of blood from the nose',
-            sprains: 'Injury to a ligament caused by tearing of the fibers of the ligament',
-            fractures: 'A broken bone'
+            cuts: 'A skin wound with separation of the connective tissue elements\n',
+            burns: 'Tissue damage from hot liquids, the sun, flames, chemicals, electricity or steam\n',
+            stings: 'Bites from insects\n',
+            splinters: 'Objects that become embedded under the skin\n',
+            sunburns: 'Red, painful skin that feels hot to touch\n',
+            nosebleeds: 'Oozing out of blood from the nose\n',
+            sprains: 'Injury to a ligament caused by tearing of the fibers of the ligament\n',
+            fractures: 'A broken bone\n'
         },
         procedures: {
-            cuts: 'Wash your hands, stop the bleeding, clean the wound, apply an antibiotic or petroleum jelly, cover the wound, change the dressing, get a tetanus shot',
-            burns: 'Cool the burn, remove rings or other tight items from burned area, do not poke blisters, apply lotion, bandage the burn',
-            stings: 'move to safe area to avoid more stings, remove any stingers, wash the area with soap and water',
-            splinters: 'apply a cloth dampened with cold water to the area of the bite for 10 to 20 minutes',
-            sunburns: 'cool the skin, apply moisturizer/lotion, drink water to prevent dehydration, do not break small blisters, take a pain reliever',
-            nosebleeds: 'sit upright and lean forward, blow your node, pinch your node, do not pick or blow nose/bend down',
-            sprains: 'rest the injured limb, ice the area, compress the area with a bandage, elevate the injured limb above your heart',
-            fractures: 'stop any bleeding, immobilize the injured area, apply ice packs, treat for shock'
+            cuts: 'Wash your hands\nStop the bleeding\nClean the wound\nApply an antibiotic or petroleum jelly\nCover the wound\nChange the dressing\nGet a tetanus shot',
+            burns: 'Cool the burn\nRemove rings or other tight items from burned area, do not poke blisters\nApply lotion\nBandage the burn',
+            stings: 'Move to safe area to avoid more stings\nRemove any stingers\nWash the area with soap and water',
+            splinters: 'Apply a cloth dampened with cold water to the area of the bite for 10 to 20 minutes',
+            sunburns: 'Cool the skin\nApply moisturizer/lotion\nDrink water to prevent dehydration, do not break small blisters\nTake a pain reliever',
+            nosebleeds: 'Sit upright and lean forward\nBlow your node\nPinch your nose, do not pick or blow nose/bend down',
+            sprains: 'Rest the injured limb\nIce the area\nCompress the area with a bandage\nElevate the injured limb above your heart',
+            fractures: 'Stop any bleeding\nImmobilize the injured area\nApply ice packs\nTreat for shock'
         }
     }
   }
 
   handleLogin = () => {
-    if(showLogin){
-        this.setState({ showMenu: true})
-        this.setState({ showLogin: false})
-    }else{
-        this.setState({ showRoot: true})
-        this.setState({ showMenu: false})
-        this.setState({ showLogin: true})
-      }
+    this.setState({ showMenu: true})
+    this.setState({ showRoot: false})
+    this.setState({ showLogin: false})
   }
+
   handleLogout = () => {
+    this.setState({ showRoot: true})
+    this.setState({ showMenu: false})
+    this.setState({ showLogin: true})
   }
-  handleRootShow = () => {
-    if(!showRoot){
-        this.setState({ showMenu: false})
-        this.setState({ showLogin: false})
-        this.setState({ showRoot: true})
-    }else{
-        this.setState({ showMenu: true})
-        this.setState({ showLogin: true})
-        this.setState({ showRoot: false})
-      }
-    }
-  }
-  handleRootHide = () => {
-    }
+
   handleCutsShow = () =>{
-    this.setState({showCuts: true})
+    this.setState({showCutsProcedure: true})
+    this.setState({showCutsIcon: false})
+    this.setState({showFracturesIcon: false})
+    this.setState({showNosebleedsIcon: false})
+    this.setState({showSunburnsIcon: false})
+    this.setState({showBruisesIcon: false})
+    this.setState({showBurnsIcon: false})
+    this.setState({showSprainsIcon: false})
+    this.setState({showSplintersIcon: false})
     this.state.setState({showMenu: false})
   }
   handleCutsHide = () => {
-    this.setState({ showCuts: false})
+    this.setState({showCuts: false})
+    this.state.setState({showMenu: true})
   }
   handleBurnsShow = () =>{
     this.setState({showBurns: true})
@@ -118,12 +123,6 @@ export default class App extends Component {
   handleSunburnsHide = () => {
     this.setState({ showSunburns: false})
   }
-  handleNosebleedsShow = () =>{
-    this.setState({showNosebleeds: true})
-  }
-  handleNosebleedsHide = () => {
-    this.setState({ showNosebleeds: false})
-  }
   handleSprainsShow = () =>{
     this.setState({showSprains: true})
   }
@@ -136,70 +135,66 @@ export default class App extends Component {
   handleFracturesHide = () => {
     this.setState({ showFractures: false})
   }
-
   render(){
-
       return (
         <View
             style={styles.root}
         >
           {this.state.showLogin &&
-            <View>
-            <Text
-                style={styles.text}
+            <View
+
             >
-                LOG IN
-            </Text>
-            <TextInput
-                style={styles.input}
-                placeholder="user001"
-            />
-            <TextInput
-                style={styles.input}
-                placeholder="****"
-            />
-            <Button
-                style={styles.button}
-                title="LOG IN"
-                onPress={this.handleLogin}
-                color="#45ada8"
-            >
-            </Button>
+                <Text
+                    style={styles.text}
+                >
+                    LOG IN
+                </Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder="user001"
+                />
+                <TextInput
+                    style={styles.input}
+                    placeholder="****"
+                />
+                <View
+                    style={{flexDirection: 'row', justifyContent: 'space-evenly'}}
+                >
+                    <Button
+                        style={styles.button.login}
+                        title="LOG IN"
+                        onPress={this.handleLogin}
+                        color="#45ada8"
+                    >
+                    </Button>
+                    <Button
+                        style={styles.button.clear}
+                        title="REGISTER"
+                        onPress={this.handleRegister}
+                        color="#45ada8"
+                    >
+                    </Button>
+                </View>
             </View>
           }
           {this.state.showMenu &&
             <View
                 style={styles.menu}
             >
-                <View
-                    style={styles.item}
-                >
-                    <Button
-                        title="CUTS"
-                        onPress={this.handleCutsShow}
-                        style={styles.menuButton.cuts}
-                        color="#45ada8"
+                {this.state.showCutsIcon &&
+                    <View
+                        style={styles.item}
                     >
-                    </Button>
-                    {this.state.showCuts &&
-                        <View
-                            style={styles.card}
+                        <Button
+                            title="CUTS"
+                            onPress={this.handleCutsShow}
+                            style={styles.menuButton.cuts}
+                            color="#45ada8"
                         >
-                            <Text>
-                                {this.state.injuries.cuts}
-                                {this.state.procedures.cuts}
-                            </Text>
-                            <Button
-                                title="HIDE"
-                                onPress={this.handleCutsHide}
-                                style={styles.button}
-                                color="#45ada8"
-                            >
-                            </Button>
-                        </View>
-                    }
-                </View>
-
+                        </Button>
+                    </View>
+                }
+                {this.state.showBurnsIcon &&
                 <View
                     style={styles.item}
                 >
@@ -210,7 +205,7 @@ export default class App extends Component {
                         color="#45ada8"
                     >
                     </Button>
-                    {this.state.showBurns &&
+                    {this.state.showBurnsProcedure &&
                         <View
                             style={styles.card}
                         >
@@ -228,6 +223,8 @@ export default class App extends Component {
                         </View>
                     }
                 </View>
+                }
+                {this.state.showBruisesIcon &&
                 <View
                     style={styles.item}
                 >
@@ -238,7 +235,7 @@ export default class App extends Component {
                         color="#45ada8"
                     >
                     </Button>
-                    {this.state.showBruises &&
+                    {this.state.showBruisesProcedure &&
                         <View
                             style={styles.card}
                         >
@@ -256,6 +253,8 @@ export default class App extends Component {
                         </View>
                     }
                 </View>
+                }
+                {this.state.showStingsIcon &&
                 <View
                     style={styles.item}
                 >
@@ -266,7 +265,7 @@ export default class App extends Component {
                         color="#45ada8"
                     >
                     </Button>
-                    {this.state.showStings &&
+                    {this.state.showStingsProcedure &&
                         <View
                             style={styles.card}
                         >
@@ -283,7 +282,9 @@ export default class App extends Component {
                             </Button>
                         </View>
                     }
-                </View>
+                    </View>
+                }
+                {this.state.showSplintersIcon &&
                 <View
                     style={styles.item}
                 >
@@ -294,7 +295,7 @@ export default class App extends Component {
                         color="#45ada8"
                     >
                     </Button>
-                    {this.state.showSplinters &&
+                    {this.state.showSplintersProcedure &&
                         <View
                             style={styles.card}
                         >
@@ -312,6 +313,9 @@ export default class App extends Component {
                         </View>
                     }
                 </View>
+                }
+
+                {this.state.showSunburnsIcon &&
                 <View
                     style={styles.item}
                 >
@@ -322,7 +326,7 @@ export default class App extends Component {
                         color="#45ada8"
                     >
                     </Button>
-                    {this.state.showSunburns &&
+                    {this.state.showSunburnsProcedure &&
                         <View
                             style={styles.card}
                         >
@@ -340,6 +344,8 @@ export default class App extends Component {
                         </View>
                     }
                 </View>
+                }
+                {this.state.showNosebleedsIcon &&
                 <View
                     style={styles.item}
                 >
@@ -350,7 +356,7 @@ export default class App extends Component {
                         color="#45ada8"
                     >
                     </Button>
-                    {this.state.showNosebleeds &&
+                    {this.state.showNosebleedsProcedure &&
                         <View
                             style={styles.card}
                         >
@@ -368,6 +374,9 @@ export default class App extends Component {
                         </View>
                     }
                 </View>
+                }
+
+                {this.state.showSprainsIcon &&
                 <View
                     style={styles.item}
                 >
@@ -378,7 +387,7 @@ export default class App extends Component {
                         color="#45ada8"
                     >
                     </Button>
-                    {this.state.showSprains &&
+                    {this.state.showSprainsProcedure &&
                         <View
                             style={styles.card}
                         >
@@ -396,6 +405,9 @@ export default class App extends Component {
                         </View>
                     }
                 </View>
+                }
+
+                {this.state.showFracturesIcon &&
                 <View
                     style={styles.item}
                 >
@@ -406,7 +418,7 @@ export default class App extends Component {
                         color="#45ada8"
                     >
                     </Button>
-                    {this.state.showFractures &&
+                    {this.state.showFracturesProcedure &&
                         <View
                             style={styles.card}
                         >
@@ -424,6 +436,24 @@ export default class App extends Component {
                         </View>
                     }
                 </View>
+                }
+                {this.state.showCutsProcedure &&
+                    <View
+                        style={styles.card}
+                    >
+                        <Text>
+                            {this.state.injuries.cuts}
+                            {this.state.procedures.cuts}
+                        </Text>
+                        <Button
+                            title="HIDE"
+                            onPress={this.handleCutsHide}
+                            style={styles.button}
+                            color="#45ada8"
+                        >
+                        </Button>
+                    </View>
+                }
                 <Button
                     title="LOG OUT"
                     onPress={this.handleLogout}
@@ -432,20 +462,8 @@ export default class App extends Component {
                 </Button>
             </View>
           }
-          {showRoot &&
-            <View
-                style={styles.dashboard}
-            >
-                <Text>
-                    TOTAL ITEMS: {this.state.totalItems}
-                    TOTAL PATIENTS: {this.state.totalPatients}
-                    TOTAL STAFF: {this.state.totalStaff}
-                    TOTAL PROCEDURES: {this.state.totalProcedures}
-                </Text>
-            </View>
-          }
-        </View>
 
+        </View>
       )
   }
 }
@@ -459,20 +477,24 @@ const styles = StyleSheet.create({
         marginBottom: '10px'
     },
     button: {
-	    width: '40vw',
-	    height: '10vh',
-	    borderRadius: '10px'
+        login:{
+            width: '20vw',
+            height: '10vh'
+        },
+        register:{
+            width: '20vw',
+            height: '10vh'
+        }
     },
     menu: {
         width: '70vw',
-        height: '70vh',
+        height: '80vh',
         flexDirection: 'column',
         backgroundColor: '#e5fcc2',
         overflowY: 'scroll',
         scrollbarWidth: 'none'
     },
     menuButton: {
-
         cuts: {
             width: '40vw',
             height: '20vh',
@@ -494,35 +516,32 @@ const styles = StyleSheet.create({
             height: '20vh',
             borderRadius: '10vw',
             backgroundImage: ICON_B
-        }
+        },
         splinter: {
             width: '40vw',
             height: '20vh',
             borderRadius: '10vw'
         },
-
         sunburns: {
             width: '40vw',
-
+            height: '20vh',
+            borderRadius: '10vw'
+        },
+        nosebleeds: {
+            width: '40vw',
+            height: '20vh',
+            borderRadius: '10vw'
+        },
+        sprains: {
+            width: '40vw',
+            height: '20vh',
+            borderRadius: '10vw'
+        },
+        fractures: {
+            width: '40vw',
             height: '20vh',
             borderRadius: '10vw'
         }
-        nosebleeds: {
-            width: '40vw',
-
-            height: '20vh',
-            borderRadius: '10vw'
-
-    },
-    sprains: {
-        width: '40vw',
-        height: '20vh',
-        borderRadius: '10vw'
-    },
-    fractures: {
-        width: '40vw',
-        height: '20vh',
-        borderRadius: '10vw'
     },
     item: {
         flexDirection: 'row',
@@ -538,7 +557,7 @@ const styles = StyleSheet.create({
         padding: '15px',
         alignItems: 'center',
         width: '40vw',
-        height: '15vh',
+        height: '42vh',
         backgroundColor: '#e5fcc2',
         borderTopRightRadius: '30px',
         borderBottomRightRadius: '30px',
