@@ -12,6 +12,7 @@ import cuts from './cuts.png'
 import search from './search.png'
 import login from './login.png'
 import menu from './menu.png'
+import { db } from './firebase'
 
 export default class App extends Component {
   constructor(props){
@@ -308,28 +309,7 @@ export default class App extends Component {
     this.setState({showSplintersIcon: true})
     this.setState({showMenu: true})
   }
-      const requestOptions = {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ postName: 'React updates ' })
-      };
 
-      const postExample = async () => {
-          try {
-              await fetch(
-                  'https://reqres.in/api/posts', requestOptions)
-                  .then(response => {
-                      response.json()
-                          .then(data => {
-                              Alert.alert("Post created at : ",
-                              data.createdAt);
-                          });
-                  })
-          }
-          catch (error) {
-              console.error(error);
-          }
-      }
   render(){
       return (
         <View
