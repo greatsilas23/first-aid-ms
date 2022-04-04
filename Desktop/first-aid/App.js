@@ -12,7 +12,7 @@ import cuts from './cuts.png'
 import search from './search.png'
 import login from './login.png'
 import menu from './menu.png'
-import { db } from './firebase'
+
 
 export default class App extends Component {
   constructor(props){
@@ -876,7 +876,9 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         backgroundColor: '#e5fcc2',
         overflowY: 'scroll',
-        scrollbarWidth: 'none'
+        scrollbarWidth: 'none',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     menuButton: {
         cuts: {
@@ -931,13 +933,15 @@ const styles = StyleSheet.create({
         height: '20vh',
         padding: '20px',
         margin: '5px',
-        backgroundColor: '#547980'
+        backgroundColor: '#547980',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     card: {
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: '15px',
         alignItems: 'center',
+        padding: '15px',
         width: '40vw',
         height: '49vh',
         backgroundColor: '#e5fcc2',
