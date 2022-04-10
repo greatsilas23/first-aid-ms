@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Linking, StyleSheet, Text, View, ScrollView, Image, TextInput, Button } from 'react-native';
+import { Linking, StyleSheet, Text, View, ScrollView, Image, TextInput, Button, TouchableOpacity } from 'react-native';
 import burns from "./[removal.ai]_tmp-6246f80563949.png"
 import stings from './154957.svg'
 import splinters from './striking-splinter.svg'
@@ -11,7 +11,8 @@ import bruises from './bruise.png'
 import cuts from './cuts.png'
 import search from './search.png'
 import login from './login.png'
-import menu from './menu.png'
+import menu from './dot.png'
+import icon from './fiest-aid-icon.jpg'
 
 
 export default class App extends Component {
@@ -322,16 +323,12 @@ export default class App extends Component {
                 <Text
                     style={styles.text}
                 >
-                    LOG IN
+                    FIRST-AID-MS
                 </Text>
-                <TextInput
-                    style={styles.input}
-                    placeholder="user001"
-                />
-                <TextInput
-                    style={styles.input}
-                    placeholder="****"
-                />
+		<Image
+			source={icon}
+			style={{height: '40vh', width: '40vw'}}
+		/>
                 <View
                     style={{flexDirection: 'row', justifyContent: 'space-evenly'}}
                 >
@@ -339,14 +336,7 @@ export default class App extends Component {
                         style={styles.button.login}
                         title="LOG IN"
                         onPress={this.handleLogin}
-                        color="#45ada8"
-                    >
-                    </Button>
-                    <Button
-                        style={styles.button.clear}
-                        title="REGISTER"
-                        onPress={this.handleRegister}
-                        color="#45ada8"
+                        color="black"
                     >
                     </Button>
                 </View>
@@ -356,16 +346,17 @@ export default class App extends Component {
             <ScrollView
                 style={styles.menu}
             >
+
                 <View
                     style={{position: 'fixed' ,flexDirection: 'row', width: '50vw', height: '7vh', backgroundColor: 'white', position: 'sticky'}}
                 >
-                    <Image
-                        style={{height: '5vh', width: '5vw'}}
-                        source={menu}
-                    />
+                <Image
+                    style={{height: '5vh', width: '5vw'}}
+                    source={menu}
+                />
                     <TextInput
                         style={{height: '5vh', width: '40vw'}}
-                        placeholder="search"
+                        placeholder=""
                     />
                     <Image
                         style={{height: '5vh', width: '5vw'}}
@@ -376,166 +367,175 @@ export default class App extends Component {
                     <View
                         style={styles.item}
                     >
-                        <Image
+			<TouchableOpacity
+				onPress={this.handleCutsShow}
+			>
+                        <View 
+				style={{width: '17vw', height: '17vh', borderRadius: '12.5vw', backgroundColor: 'white', justifyContent: 'center', alignItems: 'center'}}
+			>
+			<Image
                             style={{height: '10vh', width: '10vw'}}
                             source={cuts}
                         />
-                        <Button
-                            title="CUTS"
-                            onPress={this.handleCutsShow}
-                            style={styles.menuButton.cuts}
-                            color="#45ada8"
-                        >
-                        </Button>
+
+			</View>
+                        </TouchableOpacity>
                     </View>
                 }
                 {this.state.showBurnsIcon &&
                     <View
                         style={styles.item}
                     >
+			<TouchableOpacity
+				onPress={this.handleBurnsShow}
+			>
+                        <View 
+				style={{width: '17vw', height: '17vh', borderRadius: '12.5vw', backgroundColor: 'white', justifyContent: 'center', alignItems: 'center'}}
+			>
                         <Image
                             style={{height: '10vh', width: '10vw'}}
                             source={burns}
                         />
 
-                        <Button
-                            title="BURNS"
-                            onPress={this.handleBurnsShow}
-                            style={styles.menuButton.burns}
-                            color="#45ada8"
-                        >
-                        </Button>
 
+			</View>
+			</TouchableOpacity>
                     </View>
                 }
                 {this.state.showBruisesIcon &&
                 <View
                     style={styles.item}
                 >
+			<TouchableOpacity
+				onPress={this.handleBruisesShow}
+			>
+                        <View 
+				style={{width: '17vw', height: '17vh', borderRadius: '12.5vw', backgroundColor: 'white', justifyContent: 'center', alignItems: 'center'}}
+			>
                         <Image
                             style={{height: '10vh', width: '10vw'}}
                             source={bruises}
                         />
-
-                    <Button
-                        title="BRUISES"
-                        onPress={this.handleBruisesShow}
-                        style={styles.menuButton.bruises}
-                        color="#45ada8"
-                    >
-                    </Button>
+			</View>
+			</TouchableOpacity>
                 </View>
                 }
                 {this.state.showStingsIcon &&
                 <View
                     style={styles.item}
                 >
+			<TouchableOpacity
+				onPress={this.handleStingsShow}
+			>
+                        <View 
+				style={{width: '17vw', height: '17vh', borderRadius: '12.5vw', backgroundColor: 'white', justifyContent: 'center', alignItems: 'center'}}
+			>
                         <Image
                             style={{height: '10vh', width: '10vw'}}
                             source={stings}
                         />
 
-                    <Button
-                        title="Sting"
-                        onPress={this.handleStingsShow}
-                        style={styles.menuButton.sting}
-                        color="#45ada8"
-                    >
-                    </Button>
-                    </View>
+                    	</View>
+			</TouchableOpacity>
+		</View>
                 }
                 {this.state.showSplintersIcon &&
                 <View
                     style={styles.item}
                 >
+			<TouchableOpacity
+				onPress={this.handleSplintersShow}
+			>
+                        <View 
+				style={{width: '17vw', height: '17vh', borderRadius: '12.5vw', backgroundColor: 'white', justifyContent: 'center', alignItems: 'center'}}
+			>
                         <Image
                             style={{height: '10vh', width: '10vw'}}
                             source={splinters}
                         />
 
-                    <Button
-                        title="Splinter"
-                        onPress={this.handleSplintersShow}
-                        style={styles.menuButton.splinter}
-                        color="#45ada8"
-                    >
-                    </Button>
-                </View>
+                	</View>
+			</TouchableOpacity>
+		</View>
                 }
 
                 {this.state.showSunburnsIcon &&
                 <View
                     style={styles.item}
                 >
+			<TouchableOpacity
+				onPress={this.handleSunburnsShow}
+			>
+                        <View 
+				style={{width: '17vw', height: '17vh', borderRadius: '12.5vw', backgroundColor: 'white', justifyContent: 'center', alignItems: 'center'}}
+			>
                         <Image
                             style={{height: '10vh', width: '10vw'}}
                             source={sunburns}
                         />
 
-                    <Button
-                        title="Sunburns"
-                        onPress={this.handleSunburnsShow}
-                        style={styles.menuButton.sunburns}
-                        color="#45ada8"
-                    >
-                    </Button>
-                </View>
+	                </View>	
+			</TouchableOpacity>
+		</View>
                 }
                 {this.state.showNosebleedsIcon &&
                 <View
                     style={styles.item}
                 >
+			<TouchableOpacity
+				onPress={this.handleNosebleedsShow}
+			>
+                        <View 
+				style={{width: '17vw', height: '17vh', borderRadius: '12.5vw', backgroundColor: 'white', justifyContent: 'center', alignItems: 'center'}}
+			>
                         <Image
                             style={{height: '10vh', width: '10vw'}}
                             source={nosebleeds}
                         />
 
-                    <Button
-                        title="Nosebleeds"
-                        onPress={this.handleNosebleedsShow}
-                        style={styles.menuButton.nosebleeds}
-                        color="#45ada8"
-                    >
-                    </Button>
-                </View>
+	                </View>
+			</TouchableOpacity>
+		</View>
                 }
 
                 {this.state.showSprainsIcon &&
                 <View
                     style={styles.item}
                 >
+			<TouchableOpacity
+				onPress={this.handleSprainsShow}
+			>
+                        <View 
+				style={{width: '17vw', height: '17vh', borderRadius: '12.5vw', backgroundColor: 'white', justifyContent: 'center', alignItems: 'center'}}
+			>
                         <Image
                             style={{height: '10vh', width: '10vw'}}
                             source={sprains}
                         />
 
-                    <Button
-                        title="Sprains"
-                        onPress={this.handleSprainsShow}
-                        style={styles.menuButton.sprains}
-                        color="#45ada8"
-                    >
-                    </Button>
-                </View>
+	                </View>
+			</TouchableOpacity>
+		</View>
                 }
 
                 {this.state.showFracturesIcon &&
                 <View
                     style={styles.item}
                 >
-                        <Image
+			<TouchableOpacity
+		onPress={this.handleFracturesShow}		
+			>
+                        <View 
+				style={{width: '17vw', height: '17vh', borderRadius: '12.5vw', backgroundColor: 'white', justifyContent: 'center', alignItems: 'center'}}
+			>                
+		        <Image
                             style={{height: '10vh', width: '10vw'}}
                             source={fractures}
                         />
 
-                    <Button
-                        title="Fractures"
-                        onPress={this.handleFracturesShow}
-                        style={styles.menuButton.fractures}
-                        color="#45ada8"
-                    >
-                    </Button>
-                </View>
+	                </View>
+			</TouchableOpacity>
+		</View>
                 }
                 {this.state.showSprainsProcedure &&
                      <View
@@ -851,7 +851,7 @@ export default class App extends Component {
       )
   }
 }
-
+//styles
 const styles = StyleSheet.create({
     input: {
         width: '30vw',
@@ -874,11 +874,10 @@ const styles = StyleSheet.create({
         width: '50vw',
         height: '80vh',
         flexDirection: 'column',
-        backgroundColor: '#e5fcc2',
+        backgroundColor: '#50eDf',
         overflowY: 'scroll',
         scrollbarWidth: 'none',
-        justifyContent: 'center',
-        alignItems: 'center'
+
     },
     menuButton: {
         cuts: {
@@ -933,7 +932,7 @@ const styles = StyleSheet.create({
         height: '20vh',
         padding: '20px',
         margin: '5px',
-        backgroundColor: '#547980',
+        backgroundColor: '#white',
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -944,7 +943,7 @@ const styles = StyleSheet.create({
         padding: '15px',
         width: '40vw',
         height: '49vh',
-        backgroundColor: '#e5fcc2',
+        backgroundColor: '#03045e',
         borderTopRightRadius: '30px',
         borderBottomRightRadius: '30px',
         borderBottomLeftRadius: '30px',
@@ -957,7 +956,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         width: '50vw',
         height: '100vh',
-        backgroundColor: '#e5fcc2',
+        backgroundColor: '#00b4d8',
         borderRadius: '10px',
         justifyContent: 'center',
         alignItems: 'center'
