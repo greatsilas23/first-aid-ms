@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import { Linking, StyleSheet, Text, View, ScrollView, Image, TextInput, Button, TouchableOpacity } from 'react-native';
-import burns from "./[removal.ai]_tmp-6246f80563949.png"
-import stings from './154957.svg'
-import splinters from './striking-splinter.svg'
-import nosebleeds from './Blood_drop_plain.svg.png'
-import sprains from './sprained-ankle.svg'
-import fractures from './Sprain.png'
-import sunburns from './sunburn.png'
-import bruises from './bruise.png'
-import cuts from './cuts.png'
-import search from './search.png'
-import login from './login.png'
-import menu from './dot.png'
-import icon from './fiest-aid-icon.jpg'
-
+import burns from "./res/[removal.ai]_tmp-6246f80563949.png"
+import stings from './res/154957.svg'
+import splinters from './res/striking-splinter.svg'
+import nosebleeds from './res/Blood_drop_plain.svg.png'
+import sprains from './res/sprained-ankle.svg'
+import fractures from './res/Sprain.png'
+import sunburns from './res/sunburn.png'
+import bruises from './res/bruise.png'
+import cuts from './res/cuts.png'
+import search from './res/search.png'
+import login from './res/login.png'
+import menu from './res/dot.png'
+import icon from './res/fiest-aid-icon.jpg'
+import TopMenu from './components/TopMenu.js'
+import Card from './components/Card.js'
 
 export default class App extends Component {
   constructor(props){
@@ -346,25 +347,9 @@ export default class App extends Component {
             <ScrollView
                 style={styles.menu}
             >
-
-                <View
-                    style={{position: 'fixed' ,flexDirection: 'row', width: '50vw', height: '7vh', backgroundColor: 'white', position: 'sticky'}}
-                >
-                <Image
-                    style={{height: '5vh', width: '5vw'}}
-                    source={menu}
-                />
-                    <TextInput
-                        style={{height: '5vh', width: '40vw'}}
-                        placeholder=""
-                    />
-                    <Image
-                        style={{height: '5vh', width: '5vw'}}
-                        source={search}
-                    />
-                </View>
                 {this.state.showCutsIcon &&
-                    <View
+    
+		<View
                         style={styles.item}
                     >
 			<TouchableOpacity
