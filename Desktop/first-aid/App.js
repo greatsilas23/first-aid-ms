@@ -13,8 +13,7 @@ import search from './res/search.png'
 import login from './res/login.png'
 import menu from './res/dot.png'
 import icon from './res/fiest-aid-icon.jpg'
-import TopMenu from './components/TopMenu.js'
-import Card from './components/Card.js'
+
 
 export default class App extends Component {
   constructor(props){
