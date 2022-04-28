@@ -1,0 +1,28 @@
+{
+  "name": "first-aid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "dependencies": {
+    "expo-updates": "^0.11.6",
+    "express": "^4.17.3",
+    "gh-pages": "^3.2.3",
+    "mongodb": "^4.4.1",
+    "react-scripts": "^5.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/greatsilas23/first-aid-ms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/greatsilas23/first-aid-ms/issues"
+  },
+  "homepage": "https://github.com/greatsilas23/first-aid-ms#readme"
+}
