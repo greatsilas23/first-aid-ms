@@ -1,19 +1,24 @@
 {
   "name": "first-aid",
   "version": "1.0.0",
-  "description": "",
+  "description": "A website to manage a first-aid database",
   "main": "App.js",
   "dependencies": {
     "expo-updates": "^0.11.6",
     "express": "^4.17.3",
     "gh-pages": "^3.2.3",
     "mongodb": "^4.4.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-native": "^0.68.1",
     "react-scripts": "^5.0.1"
   },
   "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
