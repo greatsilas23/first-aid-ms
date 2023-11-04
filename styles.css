@@ -1,0 +1,36 @@
+.cut{
+animation: cutAnim 2.0s forwards;
+}
+@keyframes cutAnim{
+1%{ transform(translateX: 5px)} 
+50%{ transform(translateX: 10px)}
+99%{ transform(translateX: 15px)}
+}
+.burn{
+animation: burnAnim 2.0s forwards;
+}
+@keyframes burnAnim{
+1%{ transform(translateX: 5px)}
+50%{ transform(translateX: 15px)}
+99%{ transform(translateX: 5px)}
+}
+
+.bruise{
+animation: bruiseAnim 2.0s forwards;
+}
+
+@keyframes bruiseAnim{
+1%{ transform(translateX: 5px)}
+50% {transform(translateX: 15px)}
+99%{ transform(translateX: 5px)}
+}
+
+.eyeDamage {
+animation: eyeDamageAnim 2.0s forwards;
+}
+
+@keyframes eyeDamageAnim{
+1%{ transform(translateX: 5px)}
+50% {transform(translateX: 10px)}
+99%{ transform(translateX: 5px)}
+}
