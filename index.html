@@ -1,16 +1,139 @@
-<!doctype html>
-<html lang="en">
+<!--A program that displays a questionnaire-->
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="utf-8">
-<meta name="author" content="wolverine, joker, spiderman, wonderwoman">
-<meta name="description" content="a webpage that offers storage service using localstorage to solve a problem and achieve a goal">
-<meta name="robots" content="follow, no-follow">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>first-aid-ms</title>
-<link rel="stylesheet" href="./styles.css"/>
+	<title>QUESTIONNAIRE</title>
 </head>
 <body>
-hello world
+	<div id="divBackG">
+		<fieldset>
+			<fieldset>
+				<center>
+				<h4>WELCOME TO COMPUTER SCIENCE</h4><br>
+				<input  id="name" placeholder="FIRST NAME" />
+				<input id="e-mail" placeholder="E-MAIL ADDRESS" /><br>
+				<p id="score"></p>
+			</center>	
+			</fieldset>
+			
+			
+			<legend>ANSWER THE FOLLOWING</legend>
+			
+			<form onsubmit="event.preventDefault();">
+				<p>1. Define abstraction</p><br>
+				<input type="radio" id="choice1_1" name="qn1" value=""/>
+				<label for="choice1_1">The removal of several steps leaving only relevant data</label><br>
+				<input type="radio" id="choice2_1" name="qn1" value=""/>
+				<label for="choice2_1">Blocking someone from performing an action</label><br>
+				<input type="radio" id="choice3_1" name="qn1" value=""/>
+				<label for="choice3_1">Storing data into tables</label><br>
+				<input type="radio" id="choice4_1" name="qn1" value=""/>
+				<label for="choice4_1">Removing necessary sections of code from overall code</label><br>
+				<p id="varError1"></p>
+
+				<p>2. Define object oriented programming</p><br>
+				<input type="radio" id="choice1_2" name="qn2" value=""/>
+				<label for="choice1_2">Programming where only one main method is used</label><br>
+				<input type="radio" id="choice2_2" name="qn2" value=""/>
+				<label for="choice2_2">Programming where several sub-methods are used to solve a larger problem</label><br>
+				<input type="radio" id="choice3_2" name="qn2" value=""/>
+				<label for="choice3_2">Programming where data in tables, forms and reports</label><br>
+				<input type="radio" id="choice4_2" name="qn2" value=""/>
+				<label for="choice4_2">Programming where all variables are global variables</label><br>
+				<p id="varError2"></p>
+
+				<p>3. Define a class</p><br>
+				<input type="radio" id="choice1_3" name="qn3" value=""/>
+				<label for="choice1_3">An instance of a variable</label><br>
+				<input type="radio" id="choice2_3" name="qn3" value=""/>
+				<label for="choice2_3">A section of the overall code that solves a subproblem</label><br>
+				<input type="radio" id="choice3_3" name="qn3" value=""/>
+				<label for="choice3_3">The removal of several steps leaving only relevant data</label><br>
+				<input type="radio" id="choice4_3" name="qn3" value=""/>
+				<label for="choice4_3">Blocking someone from performing an action</label><br>
+				<p id="varError3"></p>
+
+				<p>4. What is the use of public in "public static void main(String args[])"?</p><br>
+				<input type="radio" id="choice1_4" name="qn4" value=""/>
+				<label for="choice1_4">Any user can use the instruction</label><br>
+				<input type="radio" id="choice2_4" name="qn4" value=""/>
+				<label for="choice2_4">Variables and methods are only accesible to the method they are created</label><br>
+				<input type="radio" id="choice3_4" name="qn4" value=""/>
+				<label for="choice3_4">Variables and methods are accesible to all methods in the package</label><br>
+				<input type="radio" id="choice4_4" name="qn4" value=""/>
+				<label for="choice4_4">Variables and methods are acesible to other sub-methods in the same package
+				</label><br>
+				<p id="varError4"></p>
+
+				<p>5. Determine the running time of the "Hello World" program</p><br>
+				<input type="radio" id="choice1_5" name="qn5" value=""/>
+				<label for="choice1_5">O(n)</label><br>
+				<input type="radio" id="choice2_5" name="qn5" value=""/>
+				<label for="choice2_5">O(1)</label><br>
+				<input type="radio" id="choice3_5" name="qn5" value=""/>
+				<label for="choice3_5">O(n^2)</label><br>
+				<input type="radio" id="choice4_5" name="qn5" value=""/>
+				<label for="choice4_5">none of the above</label><br>
+				<p id="varError5"></p>
+
+				<center>
+					<button id="" onclick="onSubmit();alert('Submit all and finish?');">FINISH ATTEMPT
+					</button>
+					
+				</center>
+			</form>
+			
+		</fieldset>
+	</div>
 </body>
-<script type="text/javascript" src="./server.js"></script>
+<script>
+var score=0;
+var percentage=0;
+function onSubmit()
+{
+	var name=document.getElementById("name").value;
+	var e_mail=document.getElementById("e-mail").value;
+	
+	if(document.getElementById("choice1_1").checked)
+		document.getElementById("varError1").innerHTML="correct answer";
+		//score=score+1;
+	else 
+		document.getElementById("varError1").innerHTML="correct answer is (a): The removal of several steps leaving only relevant data";
+	if(document.getElementById("choice2_2").checked)
+		document.getElementById("varError2").innerHTML="correct answer";
+		//score=score+1;
+	else
+		document.getElementById("varError2").innerHTML="correct answer is (b): Programming where several sub-methods are used to solve a larger problem";
+	if(document.getElementById("choice1_3").checked)
+		document.getElementById("varError3").innerHTML="correct answer";
+		//score=score+1;
+	else
+		document.getElementById("varError3").innerHTML="correct answer is (a): An instance of a variable";
+	if(document.getElementById("choice3_4").checked)
+		document.getElementById("varError4").innerHTML="correct answer";
+		//score=score+1;
+	else
+		document.getElementById("varError4").innerHTML="correct answer is (c): Variables and methods are accesible to all methods in the package";
+	if(document.getElementById("choice1_5").checked)
+		document.getElementById("varError5").innerHTML="correct answer";
+		//score=score+1;
+	else
+		document.getElementById("varError5").innerHTML="correct answer is (a): O(n)";
+	
+	
+	if(document.getElementById("choice1_1").checked)
+		score+=1;
+	if(document.getElementById("choice2_2").checked)
+		score+=1;
+	if(document.getElementById("choice1_3").checked)
+		score+=1;
+	if(document.getElementById("choice3_4").checked)
+		score+=1;
+	if(document.getElementById("choice1_5").checked)
+		score+=1;
+	percentage=(score/5)*100
+	document.getElementById("score").innerHTML=`Congratulations ${name}: score: (${score}/5) percentage: ${percentage}`;
+}
+	
+</script>
 </html>
